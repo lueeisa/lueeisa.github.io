@@ -1,33 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>lueeisa</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portrait Portfolio</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Georgia, serif;
+background:#f5f3ef;
+color:#333;
+}
+
+/* Header */
+
+header{
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+header p{
+color:#666;
+}
+
+/* Gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+padding:40px;
+}
+
+.art-card{
+overflow:hidden;
+border-radius:12px;
+box-shadow:0 6px 16px rgba(0,0,0,0.1);
+background:white;
+cursor:pointer;
+transition:transform .25s;
+}
+
+.art-card:hover{
+transform:translateY(-5px);
+}
+
+.art-card img{
+width:100%;
+height:340px;
+object-fit:cover;
+display:block;
+}
+
+/* Lightbox */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:8px;
+}
+
+.lightbox.active{
+display:flex;
+}
+
+/* Mobile layout */
+
+@media (max-width:900px){
+
+.gallery{
+grid-template-columns:repeat(2,1fr);
+padding:20px;
+gap:15px;
+}
+
+.art-card img{
+height:260px;
+}
+
+header h1{
+font-size:30px;
+}
+
+}
+
+@media (max-width:500px){
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.art-card img{
+height:auto;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>Hello! This is under construction :)</h1>
-    <p>portraiture and other expressions</p>
-  </header>
 
-  <main>
-    <section>
-      <h2>About</h2>
-      <p> Thank you to every one who has had to courage
-      to sit and be seen. </p>
-    </section>
+<header class="hero">
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: portraits@lueeisa.com</p>
-      <p>In front of the Del Marette some Tuesday mornings</p>
-    </section>
-  </main>
+<nav class="navbar">
+<div class="logo">.</div>
 
-  <footer>
-    <p>© 2026 Luisa Rounds</p>
-  </footer>
+<ul class="nav-links">
+<li><a href="#">Gallery</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Commissions</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+
+<div class="hero-text">
+<h1>.</h1>
+<p>:</p>
+</div>
+
+</header>
+
+<section class="gallery">
+
+<div class="art-card">
+<img loading="lazy" src="https://github.com/lueeisa/lueeisa.github.io/blob/main/selfie_1.jpeg?raw=true" onclick="openLightbox(this)">
+</div>
+
+<div class="art-card">
+<img loading="lazy" src="https://github.com/lueeisa/lueeisa.github.io/blob/main/dog_1.jpeg?raw=true" onclick="openLightbox(this)">
+</div>
+  
+<div class="art-card">
+<img loading="lazy" src="https://github.com/lueeisa/lueeisa.github.io/blob/main/Angel%20Fire_portrait%20web.jpeg?raw=true" onclick="openLightbox(this)">
+</div>
+  
+<div class="art-card">
+<img loading="lazy" src="https://github.com/lueeisa/lueeisa.github.io/blob/main/couple_1.jpeg?raw=true" onclick="openLightbox(this)">
+</div>
+ 
+<div class="art-card">
+<img loading="lazy" src="https://github.com/lueeisa/lueeisa.github.io/blob/main/Luisa_Michigan_1.JPG?raw=true" onclick="openLightbox(this)">
+</div>
+  
+<div class="art-card">
+<img loading="lazy" src="https://github.com/lueeisa/lueeisa.github.io/blob/main/girls_taos.JPEG?raw=true" onclick="openLightbox(this)">
+</div>
+  
+<div class="art-card">
+<img src="https://github.com/lueeisa/lueeisa.github.io/blob/main/Sun%20Bird%20copy%202.jpg?raw=true" onclick="openLightbox(this)">
+</div>
+
+<div class="art-card">
+<img loading="lazy" src="https://github.com/lueeisa/lueeisa.github.io/blob/main/woman_blue.jpeg?raw=true" onclick="openLightbox(this)">
+</div>
+  
+<div class="art-card">
+<img loading="lazy" src="https://github.com/lueeisa/lueeisa.github.io/blob/main/ATG2.jpg?raw=true" onclick="openLightbox(this)">
+</div>
+
+<div class="art-card">
+<img loading="lazy" src="https://github.com/lueeisa/lueeisa.github.io/blob/main/tree_mobile%20web.jpg?raw=true" onclick="openLightbox(this)">
+</div>
+
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
+
+<script>
+
+function openLightbox(img){
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+lightboxImg.src = img.src;
+lightbox.classList.add("active");
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").classList.remove("active");
+}
+
+</script>
+
 </body>
 </html>
