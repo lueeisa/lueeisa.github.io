@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Luisa</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Georgia, serif;
+    background:#f5f3ef;
+    color:#333;
+    line-height:1.7;
+}
+
+/* Navigation */
+
+nav{
+    padding:25px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#444;
+}
+
+.nav-links a:hover{
+    color:#b77d65;
+}
+
+/* About Section */
+
+.about-container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 30px 80px;
+}
+
+.about-card{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.artist-photo{
+    width:100%;
+    height:700px;
+    object-fit:cover;
+    border-radius:24px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.bio{
+    background:white;
+    padding:40px;
+    border-radius:24px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.bio h1{
+    margin-top:0;
+    font-size:48px;
+    color:#7b5f4d;
+}
+
+.bio p{
+    font-size:18px;
+    color:#555;
+}
+
+.signature{
+    margin-top:30px;
+    font-style:italic;
+    color:#b77d65;
+    font-size:22px;
+}
+
+/* Decorative accent */
+
+.sparkle{
+    font-size:28px;
+    color:#d4a373;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.about-card{
+    grid-template-columns:1fr;
+}
+
+.artist-photo{
+    height:500px;
+}
+
+.bio h1{
+    font-size:36px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">LUISA</div>
+
+<ul class="nav-links">
+<li><a href="lueeisa.com/index.html">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="https://docs.google.com/forms/d/1HezaEPeZQguQtA1uPtYlCor2i9eM8VlbcPTdnoFdLBc/edit">Order Form</a></li>
+</ul>
+
+</nav>
+
+<section class="about-container">
+
+<div class="about-card">
+
+<img
+class="artist-photo"
+src="https://github.com/lueeisa/lueeisa.github.io/blob/main/Attachment.jpeg?raw=true"
+alt="Luisa">
+
+<div class="bio">
+
+<div class="sparkle">✿ ✧ ✿</div>
+
+<h1>Hello!</h1>
+
+<p>
+I've been drawing since I was in preschool and took up portraiture of the world! Art is like breathing, 
+  a blessing, and a wonderful way to express my love. People are beautiful, and I'm here to lay it down in pencil and paper. 
+</p>
+<p>If you're interested in learning more about my story or booking a class, fill out an order form and put it in the notes section. </p>
+
+<div class="signature">
+— Luisa
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
